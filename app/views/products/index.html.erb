@@ -1,0 +1,37 @@
+<p>TODO add action cable to watch updates</p>
+<h1>Products#index</h1>
+
+<table id="products" class="" >
+  <thead>
+    <tr>
+      <th>SKU</th>
+      <th>Supplier code</th>
+      <th>Price</th>
+      <th>Name</th>
+      <th>Additional Field 0</th>
+      <th>Additional Field 1</th>
+      <th>Additional Field 2</th>
+      <th>Additional Field 3</th>
+      <th>Additional Field 4</th>
+      <th>Supplier Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <th><%= product.sku %></th>
+        <th><%= product.supplier_code %></th>
+        <th><%= product.price.to_f %></th>
+        <th><%= product.name %></th>
+        <th><%= product.field_0 %></th>
+        <th><%= product.field_1 %></th>
+        <th><%= product.field_2 %></th>
+        <th><%= product.field_3 %></th>
+        <th><%= product.field_4 %></th>
+        <th><%= product.supplier.name %></th>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @products %>
+<%= link_to 'go back', new_document_path %>

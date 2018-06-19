@@ -1,0 +1,13 @@
+<% if flash[:error].present? %>
+  <div class="error"><%= flash[:error] %></div>
+<% end %>
+
+<ol>
+  <li>First upload suppliers.csv</li>
+  <li>Than upload sku.csv</li>
+</ol>
+<%= form_for @document, url: documents_path do |form| %>
+  <%= form.file_field :attachment %>
+  <%= form.submit 'Upload' %>
+<% end %>
+<%= link_to 'go to products', products_url %>
